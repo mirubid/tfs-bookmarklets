@@ -1,0 +1,1 @@
+$('tr:hidden .minimize').click();
