@@ -3,6 +3,7 @@
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+	clean: ['build'],
 	jshint:{
 		build: {
         src: 'src/*.js'        
@@ -39,11 +40,12 @@
   });
 
   // Load the plugin that provides the "uglify" task.
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('assemble');
   grunt.loadNpmTasks('js2uri');
   // Default task(s).
-  grunt.registerTask('default', ['jshint','uglify','js2uri','assemble']);
+  grunt.registerTask('default', ['clean','jshint','uglify','js2uri','assemble']);
 
 };
