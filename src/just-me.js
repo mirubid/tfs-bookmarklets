@@ -4,9 +4,6 @@
 setTimeout(function () {
 	var me;
 	$('tr:visible .minimize').click();
-	me=localStorage['tfs-tweaker.me'];
-	if(!me){
-		me = localStorage['tfs-tweaker.me'] = prompt('Enter name (partial match)');
-	}
+	me=$('.user-menu>li[command=user] span').text();//localStorage['tfs-tweaker.me'];
 	$('.witTitle:not(.clickableTitle):contains(' + me + ')').closest('tr.taskboard-row').find('.maximize').click();
 }, 100);
