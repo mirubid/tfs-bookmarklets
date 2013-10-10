@@ -36,6 +36,12 @@
 				'bookmarks.html': ['src/bookmarks.html']
 			}
 		}
+	},
+	copy: {
+		main:{		
+			src:'bookmarks.html',
+			dest:'gist/bookmarks-vs-bookmarklets.html'
+		}		
 	}
   });
 
@@ -43,9 +49,10 @@
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('assemble');
   grunt.loadNpmTasks('js2uri');
   // Default task(s).
-  grunt.registerTask('default', ['clean','jshint','uglify','js2uri','assemble']);
+  grunt.registerTask('default', ['clean','jshint','uglify','js2uri','assemble','copy']);
 
 };
